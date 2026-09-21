@@ -1,21 +1,3 @@
-/* =====================================================
-   ComicMania - estilos.css
-
-   Los bloques van en el mismo orden en que aparecen en la página:
-   página > header > menú > títulos > botones > carrusel >
-   tarjetas > formularios > carrito > footer
-
-   COLORES USADOS (para buscar y reemplazar con Ctrl+H):
-   #FCE7F3  rosado suave    fondo de la página, menú y footer
-   #FFFFFF  blanco          paneles y tarjetas
-   #FDA4AF  rosa primavera  bordes y separadores
-   #E11D48  magenta         color de acento: botones, títulos, precios
-   #BE123C  magenta oscuro  solo al pasar el mouse
-   #4C0519  vino oscuro     texto
-   ===================================================== */
-
-
-/* ---------- PÁGINA ---------- */
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -23,8 +5,7 @@ body {
     background-color: #FCE7F3;
 }
 
-/* Fuente de cómic (Bangers) para todo esto. Para cambiarla, cambia solo esta línea
-   (y el link de Google Fonts en el <head> de los HTML). */
+
 .logo-cm,
 .header > div:nth-of-type(2),
 .navbar .nav-link,
@@ -44,18 +25,14 @@ body {
     padding: 10px;
 }
 
-/* Cada fila (hija directa de .contenedor) es un panel blanco */
 .contenedor > div {
     border: 2px solid #FDA4AF;
     border-radius: 12px;
     margin: 10px;
     padding: 10px;
-    background-color: white;
+    background-color: #FFFFFF;
     box-shadow: 0 4px 12px rgba(225, 29, 72, 0.10);
 }
-
-
-/* ---------- HEADER ---------- */
 
 .header {
     display: flex;
@@ -64,33 +41,95 @@ body {
 }
 
 .logo-cm {
-    width: 64px;
-    height: 64px;
+    position: relative;
+
+    width: 100px;
+    height: 70px;
+
     margin-left: 20px;
-    border-radius: 50%;
-    background-color: #E11D48;
-    color: white;
-    font-size: 1.8rem;
-    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+
+    background-color: #FDA4AF;
+
+    border: 4px solid #FFFFFF;
+    border-radius: 18px;
+
+    color: #FCE7F3;
+    font-size: 3.2rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    text-shadow:
+        3px 3px 0 #E11D48,
+        -2px -2px 0 #FFFFFF,
+        2px -2px 0 #FFFFFF,
+        -2px 2px 0 #FFFFFF;
+
+    box-shadow:
+        0 0 0 3px #E11D48,
+        5px 5px 0 #FDA4AF,
+        0 6px 12px rgba(225, 29, 72, 0.20);
+
+    transform: rotate(-4deg);
 }
+
+
+.logo-cm::before {
+    content: "";
+
+    position: absolute;
+
+    width: 18px;
+    height: 8px;
+
+    top: 10px;
+    left: 18px;
+
+    background-color: #FFFFFF;
+    border-radius: 50%;
+
+    transform: rotate(-25deg);
+}
+
+
+.logo-cm::after {
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    top: 20px;
+    left: 12px;
+
+    background-color: #FFFFFF;
+    border-radius: 50%;
+}
+
 
 .header > div:nth-of-type(2) {
-    font-size: 3.5rem;
-    letter-spacing: 0.05em;
+    font-size: 3.8rem;
+    letter-spacing: 0.04em;
     color: #E11D48;
+
     margin-right: 20px;
+
+    text-shadow:
+        2px 2px 0 #FFFFFF,
+        4px 4px 0 #FDA4AF;
 }
 
-
-/* ---------- MENÚ ---------- */
 
 .navbar {
     background-color: #FCE7F3;
     border-radius: 8px;
 }
+
 
 .navbar .nav-link {
     font-size: 1.3rem;
@@ -99,65 +138,68 @@ body {
     color: #4C0519;
 }
 
+
 .navbar .nav-link:hover {
     color: #BE123C;
 }
 
-/* Link de la página actual: etiqueta magenta inclinada */
+
 .navbar .nav-link.active,
 .navbar .nav-link.active:hover {
     background-color: #E11D48;
-    color: white;
+    color: #FFFFFF;
     border-radius: 6px;
     transform: skew(-8deg);
 }
 
-/* Lista desplegable de "Categorías" */
+
 .dropdown-menu {
     border: 2px solid #FDA4AF;
     border-radius: 8px;
 }
 
+
 .dropdown-item {
     color: #4C0519;
 }
+
 
 .dropdown-item:hover {
     background-color: #FCE7F3;
     color: #BE123C;
 }
 
+
 .dropdown-item:active {
     background-color: #E11D48;
-    color: white;
+    color: #FFFFFF;
 }
 
 
-/* ---------- TÍTULOS ---------- */
-
 .titulo-cont {
     display: inline-block;
+
     margin: 0 0 1rem 0;
     padding: 0.1em 0.6em;
+
     font-size: 2.4rem;
     font-weight: 400;
     line-height: 1.15;
     letter-spacing: 0.05em;
-    color: white;
+
+    color: #FFFFFF;
     background-color: #E11D48;
+
     border-radius: 4px;
+
     box-shadow: 4px 4px 0 #FDA4AF;
+
     transform: skew(-8deg);
 }
 
-/* Títulos más chicos (Carrito y Nuestra tienda) */
 .titulo-cont.titulo-chico {
     font-size: 1.7rem;
 }
-
-
-/* ---------- BOTONES ----------
-   Bootstrap pone sus propios colores azules. Con !important los cambiamos. */
 
 .btn {
     font-size: 1.15rem;
@@ -170,11 +212,10 @@ body {
     font-size: 1rem;
 }
 
-/* Botón principal: Agregar al carrito, Enviar */
 .btn-primary {
     background-color: #E11D48 !important;
     border-color: #E11D48 !important;
-    color: white !important;
+    color: #FFFFFF !important;
 }
 
 .btn-primary:hover {
@@ -182,54 +223,53 @@ body {
     border-color: #BE123C !important;
 }
 
-/* Botón secundario: Quitar, Vaciar carrito */
 .btn-secundario {
-    background-color: white !important;
+    background-color: #FFFFFF !important;
     border-color: #E11D48 !important;
     color: #E11D48 !important;
 }
 
 .btn-secundario:hover {
     background-color: #E11D48 !important;
-    color: white !important;
+    color: #FFFFFF !important;
 }
 
-/* Aro que se ve al navegar con el teclado */
 .btn:focus-visible {
     box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.4);
 }
 
 
-/* ---------- CARRUSEL (index) ---------- */
-
 .carousel {
     max-width: 960px;
     margin: 0 auto;
+
     overflow: hidden;
+
     border: 2px solid #FDA4AF;
     border-radius: 12px;
 }
 
-/* Los banners son casi 2:1, así se ven completos sin recortar el texto */
+
 .carousel-item img {
     width: 100%;
     aspect-ratio: 2 / 1;
     object-fit: cover;
 }
 
-/* Los puntitos de abajo, con fondo oscuro para que se vean sobre cualquier banner */
+
 .carousel-indicators {
     left: 50%;
     right: auto;
+
     margin: 0 0 8px 0;
     padding: 2px 10px;
+
     transform: translateX(-50%);
+
     background-color: rgba(76, 5, 25, 0.55);
+
     border-radius: 999px;
 }
-
-
-/* ---------- TARJETAS DE PRODUCTO ---------- */
 
 .cont-tarjetas {
     display: flex;
@@ -237,26 +277,36 @@ body {
     justify-content: center;
 }
 
+
 .cont-tarjetas .card {
     width: 16rem;
+
     overflow: hidden;
-    background-color: white;
+
+    background-color: #FFFFFF;
+
     border: 2px solid #FDA4AF;
     border-radius: 12px;
+
     box-shadow: 0 4px 12px rgba(225, 29, 72, 0.10);
 }
+
 
 .cont-tarjetas .card:hover {
     transform: translateY(-4px);
 }
 
-/* Portada (las portadas de manga son verticales) */
+
 .cont-tarjetas .card-img-top {
     aspect-ratio: 2 / 3;
+
     object-fit: cover;
+
     border-radius: 0;
+
     border-bottom: 2px solid #FDA4AF;
 }
+
 
 .card-title {
     font-size: 1.6rem;
@@ -265,16 +315,21 @@ body {
     letter-spacing: 0.04em;
 }
 
-/* Categoría (la "pastillita") */
+
 .etiqueta {
     display: inline-block;
+
     padding: 0 0.6em;
+
     font-size: 0.8rem;
     font-weight: bold;
+
     background-color: #FCE7F3;
+
     border: 1px solid #FDA4AF;
     border-radius: 999px;
 }
+
 
 .precio {
     font-size: 1.8rem;
@@ -283,52 +338,60 @@ body {
 }
 
 
-/* ---------- FORMULARIOS ---------- */
-
 .form-control,
 .form-select {
     border: 2px solid #E11D48;
     border-radius: 8px;
 }
 
+
 .form-control:focus,
 .form-select:focus {
     border-color: #E11D48;
-    box-shadow: 0 0 0 0.25rem rgba(225, 29, 72, 0.25);
+
+    box-shadow:
+        0 0 0 0.25rem rgba(225, 29, 72, 0.25);
 }
+
 
 .form-label {
     font-weight: bold;
 }
 
-/* Mensajes de error del formulario de contacto */
+
 .error-campo {
     color: #E11D48;
     font-weight: bold;
 }
 
 
-/* ---------- CARRITO ---------- */
 
-/* El numerito al lado de "Carrito" */
 .insignia {
-    background-color: white;
+    background-color: #FFFFFF;
     color: #E11D48;
+
     font-size: 1rem;
     font-weight: 400;
 }
 
+
 aside .list-group-item {
     background-color: transparent;
+
     border-color: #FDA4AF;
     border-style: dashed;
 }
 
+
+
 #carrito-total {
     margin-top: 0.75rem;
+
     padding-top: 0.5rem;
+
     border-top: 2px dashed #FDA4AF;
 }
+
 
 #total-precio {
     font-size: 1.6rem;
@@ -337,31 +400,82 @@ aside .list-group-item {
 }
 
 
-/* ---------- FOOTER ---------- */
-
-/* ".contenedor > .pie" para ganarle a ".contenedor > div" (que lo dejaría blanco) */
 .contenedor > .pie {
     background-color: #FCE7F3;
 }
+
 
 .caja-inferior {
     margin: 10px;
 }
 
+
 .caja-inferior > div {
     margin: 5px;
 }
 
+
 .caja-inferior > div:nth-of-type(1) {
     font-size: 1.6rem;
+
     letter-spacing: 0.05em;
+
     color: #E11D48;
+
     margin-bottom: 20px;
 }
+
 
 .caja-inferior a {
     color: #4C0519;
     text-decoration: underline;
 }
 
+
 .caja-inferior a:hover {
+    color: #BE123C;
+}
+
+
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px dashed #BE123C;
+    outline-offset: 3px;
+}
+
+
+@media (max-width: 991px) {
+
+    .contenedor aside {
+        margin-top: 1.5rem;
+    }
+}
+
+
+@media (max-width: 575px) {
+
+    .logo-cm {
+        width: 75px;
+        height: 55px;
+
+        font-size: 2.4rem;
+
+        margin-left: 10px;
+    }
+
+
+    .header > div:nth-of-type(2) {
+        font-size: 2rem;
+        margin-right: 10px;
+    }
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+
+    .cont-tarjetas .card {
+        transition: transform 0.12s;
+    }
+}

@@ -10,7 +10,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-    <!-- Fuente de cómic para los títulos (si no carga, se usa Impact) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
@@ -22,7 +21,7 @@
 <body>
     <div class="contenedor">
 
-        <!-- FILA 1: header (logo + nombre) -->
+        <!-- header -->
         <div class="row">
             <div class="col header">
                 <div class="logo-cm" aria-hidden="true">CM</div>
@@ -30,7 +29,7 @@
             </div>
         </div>
 
-        <!-- FILA 2: menú (categorías simuladas dentro del desplegable) -->
+        <!--  menú -->
         <div class="row">
             <div class="col">
                 <nav class="navbar navbar-expand-sm" aria-label="Menú principal">
@@ -64,15 +63,19 @@
             </div>
         </div>
 
-        <!-- FILA 3: productos (9/12) + carrito (3/12) -->
         <div class="row">
             <section class="col-lg-9" aria-labelledby="titulo-productos">
                 <div class="titulo-cont w-100" id="titulo-productos">Todos los cómics</div>
 
+                <form id="form-busqueda" class="d-flex mb-3" role="search">
+                    <label for="busqueda" class="visually-hidden">Buscar cómics por título</label>
+                    <input id="busqueda" type="search" class="form-control me-2" placeholder="Buscar por título...">
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </form>
+                <p id="info-resultados" aria-live="polite" class="small"></p>
+
                 <div id="indicador-carga">Cargando...</div>
                 <div id="indicador-error" role="alert" style="display: none;">No se pudieron cargar los cómics. Intenta recargar la página.</div>
-
-                <!-- Aquí el JS agrega una tarjeta por cada producto -->
                 <div class="cont-tarjetas w-100" id="lista-productos"></div>
             </section>
 
@@ -94,7 +97,7 @@
             </aside>
         </div>
 
-        <!-- ÚLTIMA FILA: footer -->
+        <!-- footer -->
         <div class="row text-center pie">
             <div class="col-sm caja-inferior text-start">
                 <div>Nosotros</div>

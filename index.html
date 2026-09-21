@@ -17,7 +17,7 @@
 <body>
     <div class="contenedor">
 
-        <!-- FILA 1: header (logo + nombre) -->
+        <!-- header -->
         <div class="row">
             <div class="col header">
                 <div class="logo-cm" aria-hidden="true">CM</div>
@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <!-- FILA 2: menú (categorías simuladas dentro del desplegable) -->
+        <!-- menú -->
         <div class="row">
             <div class="col">
                 <nav class="navbar navbar-expand-sm" aria-label="Menú principal">
@@ -34,7 +34,7 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
-                                                        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                            <ul class="navbar-nav me-auto mb-2 mb-sm-0">
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
                                 </li>
@@ -59,7 +59,7 @@
             </div>
         </div>
 
-        <!-- FILA 3: carrusel -->
+        <!-- carrusel -->
         <div class="row">
             <div class="col">
                 <div id="carouselExampleIndicators" class="carousel slide">
@@ -89,6 +89,18 @@
                     </button>
                 </div>
             </div>
+        </div>
+
+        <div class="row">
+            <section class="col-12" aria-labelledby="titulo-destacados">
+                <div class="titulo-cont w-100" id="titulo-destacados">Destacados</div>
+
+                <div id="indicador-carga">Cargando...</div>
+                <div id="indicador-error" role="alert" style="display: none;">No se pudieron cargar los cómics. Intenta recargar la página.</div>
+                <div class="cont-tarjetas w-100 d-flex flex-wrap" id="lista-productos" data-max="3"></div>
+
+                <a href="./producto.html" class="btn btn-secundario mt-3">Ver todos los cómics</a>
+            </section>
         </div>
 
         <!-- footer -->
