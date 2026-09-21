@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Productos - ComicMania</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Fuente de cómic para los títulos (si no carga, se usa Impact) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/estilos.css">
+    <script src="./assets/js/base.js" defer></script>
+</head>
+
+<body>
+    <div class="contenedor">
+
+        <!-- FILA 1: header (logo + nombre) -->
+        <div class="row">
+            <div class="col header">
+                <div class="logo-cm" aria-hidden="true">CM</div>
+                <div>ComicMania</div>
+            </div>
+        </div>
+
+        <!-- FILA 2: menú (categorías simuladas dentro del desplegable) -->
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-expand-sm" aria-label="Menú principal">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Mostrar u ocultar el menú">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./index.html">Inicio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="./producto.html">Producto</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./contacto.html">Contacto</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="./producto.html?categoria=Acci%C3%B3n">Acción</a></li>
+                                        <li><a class="dropdown-item" href="./producto.html?categoria=Comedia">Comedia</a></li>
+                                        <li><a class="dropdown-item" href="./producto.html?categoria=Ciencia%20ficci%C3%B3n">Ciencia ficción</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- FILA 3: productos (9/12) + carrito (3/12) -->
+        <div class="row">
+            <section class="col-lg-9" aria-labelledby="titulo-productos">
+                <div class="titulo-cont w-100" id="titulo-productos">Todos los cómics</div>
+
+                <div id="indicador-carga">Cargando...</div>
+                <div id="indicador-error" role="alert" style="display: none;">No se pudieron cargar los cómics. Intenta recargar la página.</div>
+
+                <!-- Aquí el JS agrega una tarjeta por cada producto -->
+                <div class="cont-tarjetas w-100" id="lista-productos"></div>
+            </section>
+
+            <aside class="col-lg-3" aria-labelledby="titulo-carrito">
+                <div class="titulo-cont titulo-chico" id="titulo-carrito">
+                    Carrito <span id="contador-carrito" class="badge insignia" aria-label="0 productos">0</span>
+                </div>
+
+                <p id="carrito-vacio">Aún no has agregado cómics.</p>
+                <ul id="lista-carrito" class="list-group list-group-flush" aria-live="polite"></ul>
+
+                <div id="carrito-total" style="display: none;">
+                    <div class="d-flex justify-content-between fw-bold mt-3">
+                        <span>Total</span>
+                        <span id="total-precio">$0</span>
+                    </div>
+                    <button id="btn-vaciar" type="button" class="btn btn-secundario w-100 mt-3">Vaciar carrito</button>
+                </div>
+            </aside>
+        </div>
+
+        <!-- ÚLTIMA FILA: footer -->
+        <div class="row text-center pie">
+            <div class="col-sm caja-inferior text-start">
+                <div>Nosotros</div>
+                <div>Tienda de cómics y manga en Santiago.</div>
+            </div>
+
+            <div class="col-sm caja-inferior text-start">
+                <div>Contacto</div>
+                <div>contacto@comicmania.cl</div>
+                <div>+56 9 1234 5678</div>
+            </div>
+
+            <div class="col-sm caja-inferior text-start">
+                <div>Síguenos</div>
+                <div><a href="#">Instagram</a></div>
+                <div><a href="#">Facebook</a></div>
+                <div><a href="#">TikTok</a></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

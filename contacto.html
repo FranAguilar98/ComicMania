@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Contacto - ComicMania</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Fuente de cómic para los títulos (si no carga, se usa Impact) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/estilos.css">
+    <script src="./assets/js/base.js" defer></script>
+</head>
+
+<body>
+    <div class="contenedor">
+
+        <!-- FILA 1: header (logo + nombre) -->
+        <div class="row">
+            <div class="col header">
+                <div class="logo-cm" aria-hidden="true">CM</div>
+                <div>ComicMania</div>
+            </div>
+        </div>
+
+        <!-- FILA 2: menú (categorías simuladas dentro del desplegable) -->
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-expand-sm" aria-label="Menú principal">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Mostrar u ocultar el menú">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./index.html">Inicio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./producto.html">Producto</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="./contacto.html">Contacto</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="./producto.html?categoria=Acci%C3%B3n">Acción</a></li>
+                                        <li><a class="dropdown-item" href="./producto.html?categoria=Comedia">Comedia</a></li>
+                                        <li><a class="dropdown-item" href="./producto.html?categoria=Ciencia%20ficci%C3%B3n">Ciencia ficción</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- FILA 3: formulario (6/12) + datos de la tienda (6/12) -->
+        <div class="row">
+            <section class="col-md-6" aria-labelledby="titulo-contacto">
+                <div class="titulo-cont w-100" id="titulo-contacto">Contacto</div>
+
+                <form id="form-contacto" novalidate>
+                    <div class="mb-3">
+                        <label for="contacto-nombre" class="form-label">Nombre</label>
+                        <input id="contacto-nombre" type="text" class="form-control" autocomplete="name">
+                        <div id="error-nombre" class="error-campo" role="alert" style="display: none;">Debe ingresar un nombre</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="contacto-correo" class="form-label">Correo</label>
+                        <input id="contacto-correo" type="email" class="form-control" autocomplete="email">
+                        <div id="error-correo" class="error-campo" role="alert" style="display: none;">Debe ingresar un correo válido</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="contacto-motivo" class="form-label">Motivo</label>
+                        <select id="contacto-motivo" class="form-select">
+                            <option value="">Selecciona un motivo</option>
+                            <option value="consulta">Consulta</option>
+                            <option value="reclamo">Reclamo</option>
+                            <option value="sugerencia">Sugerencia</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                        <div id="error-motivo" class="error-campo" role="alert" style="display: none;">Debe seleccionar un motivo</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="contacto-detalle" class="form-label">Detalle</label>
+                        <textarea id="contacto-detalle" class="form-control" rows="6"></textarea>
+                        <div id="error-detalle" class="error-campo" role="alert" style="display: none;">Debe ingresar el detalle de su mensaje</div>
+                    </div>
+
+                    <button id="contacto-enviar" type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </section>
+
+            <aside class="col-md-6" aria-labelledby="titulo-tienda">
+                <div class="titulo-cont titulo-chico" id="titulo-tienda">Nuestra tienda</div>
+                <p>Av. Providencia 456, Santiago</p>
+                <p>Lunes a sábado, de 10:00 a 19:00</p>
+                <p>contacto@comicmania.cl<br>+56 9 1234 5678</p>
+            </aside>
+        </div>
+
+        <!-- ÚLTIMA FILA: footer -->
+        <div class="row text-center pie">
+            <div class="col-sm caja-inferior text-start">
+                <div>Nosotros</div>
+                <div>Tienda de cómics y manga en Santiago.</div>
+            </div>
+
+            <div class="col-sm caja-inferior text-start">
+                <div>Contacto</div>
+                <div>contacto@comicmania.cl</div>
+                <div>+56 9 1234 5678</div>
+            </div>
+
+            <div class="col-sm caja-inferior text-start">
+                <div>Síguenos</div>
+                <div><a href="#">Instagram</a></div>
+                <div><a href="#">Facebook</a></div>
+                <div><a href="#">TikTok</a></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

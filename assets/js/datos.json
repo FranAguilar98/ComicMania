@@ -1,0 +1,24 @@
+[
+  { "id": 1, 
+  "titulo": "Gintama",            
+  "autor": "Hideaki Sorachi",            
+  "precio": 8990, 
+  "categoria": "Comedia",         
+  "img": "assets/img/manga-gintama.webp"
+ },
+  
+ { "id": 2, 
+  "titulo": "No. 6",              
+  "autor": "Hinoki Kino / Atsuko Asano", 
+  "precio": 9490, 
+  "categoria": "Ciencia ficción", 
+  "img": "assets/img/manga-No.6.webp" 
+},
+  
+{ "id": 3, 
+  "titulo": "Shingeki no Kyojin", 
+  "autor": "Hajime Isayama",             
+  "precio": 9990, 
+  "categoria": "Acción",          
+  "img": "assets/img/manga-Shingeki.webp" }
+]
